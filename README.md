@@ -24,6 +24,7 @@ To generate the channel data for the evaluation of the multi-path parameter esti
 ```bash 
 matlab Matlab_code/data_generation.m
 ```
+The data is generated considering a 1 X 4 MIMO system, i.e., one transmitter antenna and four receiver antennas, operating on a 80 MHz channel with 256 OFDM sub-channels and with 15 dB of SNR.
 
 ## Multi-path parameter estimation approaches
 The following pipelines take as input a file containing channel frequency response (CFR) data and provide as output the estimated parameters of the multi-path components. 

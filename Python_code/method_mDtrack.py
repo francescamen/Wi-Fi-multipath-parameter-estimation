@@ -116,8 +116,8 @@ if __name__ == '__main__':
                               254, 255], dtype=int)
     frequency_vector_idx = np.delete(frequency_vector_idx, delete_idxs, axis=0)
     frequency_vector_hz = np.delete(frequency_vector_hz, delete_idxs, axis=0)
-    fc = 5180E6
-    frequency_vector_hz = frequency_vector_hz + fc
+
+    frequency_vector_hz = frequency_vector_hz
 
     H_complete_valid = signal_complete
 

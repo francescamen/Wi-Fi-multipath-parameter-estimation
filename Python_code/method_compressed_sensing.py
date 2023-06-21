@@ -97,8 +97,8 @@ if __name__ == '__main__':
 
     frequency_vector_idx = np.delete(frequency_vector_idx, delete_idxs, axis=0)
     frequency_vector = np.delete(frequency_vector_complete, delete_idxs, axis=0)
-    fc = 5180E6
-    frequency_vector = frequency_vector + fc
+
+    frequency_vector = frequency_vector
 
     sample_selector = range(start_r, end_r, step_r)
     signal_considered = signal_complete[sample_selector, :, :]
