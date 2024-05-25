@@ -1,16 +1,4 @@
-%     Copyright (C) 2023 Alejandro Blanco
-%     This program is free software: you can redistribute it and/or modify
-%     it under the terms of the GNU General Public License as published by
-%     the Free Software Foundation, either version 3 of the License, or
-%     (at your option) any later version.
-%     This program is distributed in the hope that it will be useful,
-%     but WITHOUT ANY WARRANTY; without even the implied warranty of
-%     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-%     GNU General Public License for more details.
-%     You should have received a copy of the GNU General Public License
-%     along with this program.  If not, see <https://www.gnu.org/licenses/>.
-
-function [ToA_estimated, AoA_estimated, max_values, neig, fh] = JADE_Reduced_Smoothing_WiFi_Four(channel, step_toa, step_aoa, sm_f_aoa, K, BW, sm_f_toa, print_spectrum, grid_toa, isFB, n_e)
+function [ToA_estimated, AoA_estimated, max_values, neig, fh] = JADE_Reduced_Spotfi_WiFi_Four(channel, step_toa, step_aoa, sm_f_aoa, K, BW, sm_f_toa, print_spectrum, grid_toa, isFB, n_e)
 %UNTITLED3 Summary of this function goes here
 %   Detailed explanation goes here
 
@@ -82,7 +70,7 @@ function [ToA_estimated, AoA_estimated, max_values, neig, fh] = JADE_Reduced_Smo
     
 %     R = zeros(len_R);
     
-    R = Smoothing_2D_Stream(channel_interp,sm_f_aoa, sm_f_toa, isFB);
+    R = Spotfi_2D_Stream(channel_interp,sm_f_aoa, sm_f_toa, isFB);
 
     % sp = rmusic_1d(R, 3)
 
@@ -124,7 +112,7 @@ function [ToA_estimated, AoA_estimated, max_values, neig, fh] = JADE_Reduced_Smo
     if (print_spectrum)
         % plot the spectrum
 
-        fh = figure("visible", "off");
+        fh = figure("visible", "on");
         h = pcolor(rad2deg(theta),index_time.', ps_db_reshape_total);
         colormap jet
         set(h, 'EdgeColor', 'none');

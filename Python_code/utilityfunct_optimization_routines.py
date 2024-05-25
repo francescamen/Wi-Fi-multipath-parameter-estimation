@@ -281,7 +281,7 @@ def optimize_aoa_toa_iht(signal_considered, frequency_vector, t_min, t_max, delt
 
     # Dictionary initialization
     T_matrix_times, time_vector = build_toa_matrix(frequency_vector, delta_t, t_min, t_max)
-    T_matrix_angles, angle_vector, _ = build_aoa_matrix(num_angles, n_tot, frequency_vector)
+    T_matrix_angles, angle_vector, _ = build_aoa_matrix(num_angles, n_tot)
     T_matrix_angles = np.conj(T_matrix_angles.T)
 
     # Time steps optimization
